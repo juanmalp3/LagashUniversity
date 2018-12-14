@@ -80,7 +80,7 @@ public class GUIEstacionamiento extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\juanm\\Documents\\NetBeansProjects\\LagashUniversity\\Logo_680608.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lagashuniversity/Logo_680608.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei", 0, 16)); // NOI18N
         jLabel3.setText("DETECCIONES AUTOMATICAS");
