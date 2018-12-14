@@ -6,8 +6,10 @@ import javax.swing.JOptionPane;
 
 public class Estacionamiento implements ParkingLot {
 
-    int AutosEstacionados = 0;
+    int AutosEstacionados = 0; //Inicialización del Contador de Autos
+    
     @Override
+    //Metodo utilizado para consultar la cantidad de autos estacionados en el momento de la consulta
     public int CantidadEstacionados() {
         if (AutosEstacionados == 0){
             JOptionPane.showMessageDialog(null, "null");
@@ -18,12 +20,16 @@ public class Estacionamiento implements ParkingLot {
     }
 
     @Override
+    //Metodo utilizado para consultar la cantidad de estacionamientos disponibles
+    //en el momento de la consulta
     public int EspaciosDisponibles() {
         JOptionPane.showMessageDialog(null, "Hay " + (100 - AutosEstacionados) + " estacionamientos disponibles" );
         return AutosEstacionados;
     }
 
     @Override
+    //Metodo utilizado para ingresar al sistema la entrada de un vehículo
+    //detectada por sensor
     public void IngresoDetectado() {
         if (AutosEstacionados < 100){
             AutosEstacionados = AutosEstacionados + 1;
@@ -35,6 +41,8 @@ public class Estacionamiento implements ParkingLot {
     }
 
     @Override
+    //Metodo utilizado para ingresar al sistema la salida de un vehículo
+    //detectada por sensor
     public void EgresoDetectado() {
         if (AutosEstacionados > 0){
             AutosEstacionados = AutosEstacionados - 1;
@@ -46,6 +54,8 @@ public class Estacionamiento implements ParkingLot {
     }
 
     @Override
+    //Metodo que calcula la Facturación diaria en base a la cantidad de autos
+    //estacionados a las 00hs del día.
     public void FacturarEstadia(int PrecioPorDia) {
         int Estadia = PrecioPorDia * AutosEstacionados;
         JOptionPane.showMessageDialog(null,"La factura total del día es de " + Estadia + " ARS");
